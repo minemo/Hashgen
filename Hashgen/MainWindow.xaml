@@ -1,0 +1,23 @@
+﻿<Window x:Class="Hashgen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hashgen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="button2" Content="Generate Hashs " HorizontalAlignment="Left" Margin="35,66,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
+        <Button x:Name="button1" Content="Select Root Folder" HorizontalAlignment="Left" Margin="35,11,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="openfileselect"/>
+        <Label Content="1." HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label Content="2." HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <ListView x:Name="Lbox" Margin="334,0,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
