@@ -5,19 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hashgen"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="HashGen" Height="450" Width="375">
     <Grid>
-        <Button x:Name="button2" Content="Generate Hashs " HorizontalAlignment="Left" Margin="35,66,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
-        <Button x:Name="button1" Content="Select Root Folder" HorizontalAlignment="Left" Margin="35,11,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="openfileselect"/>
-        <Label Content="1." HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <Label Content="2." HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <ListView x:Name="Lbox" Margin="334,0,0,0">
+        <Button x:Name="button1" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="openfileselect"/>
+        <ListView x:Name="Lbox" Margin="115,0,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="clear" Content="Clear" HorizontalAlignment="Left" Margin="34,373,0,0" VerticalAlignment="Center" Height="51" Width="76"/>
 
     </Grid>
 </Window>
