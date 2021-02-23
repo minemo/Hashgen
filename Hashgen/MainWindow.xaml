@@ -15,7 +15,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="clear" Content="Clear" HorizontalAlignment="Left" Margin="34,373,0,0" VerticalAlignment="Center" Height="51" Width="76"/>
+        <Button x:Name="button1_Copy" Content="Export" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="exportfile"/>
 
     </Grid>
 </Window>
