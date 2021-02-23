@@ -67,12 +67,15 @@ namespace Hashgen
 
         private void exportfile(object sender, RoutedEventArgs e)
         {
+            Lbox.Items.Clear();
+            Lbox.Items.Add("Exportpfad ist: C:\\Users\\" + Environment.UserName + "\\Downloads\\" + "Hashgen_export.txt");
             StreamWriter write = File.CreateText("C:\\Users\\"+ Environment.UserName +"\\Downloads\\" + "Hashgen_export.txt");
             foreach(String hash in allhash)
             {
                 write.WriteLine(hash);
             }
             write.Close();
+            Lbox.Items.Add("Export fertiggestellt");
         }
     }
 }
