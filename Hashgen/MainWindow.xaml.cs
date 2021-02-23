@@ -54,7 +54,7 @@ namespace Hashgen
         private void openfileselect(object sender, RoutedEventArgs e)
         {
             using var dialog = new System.Windows.Forms.FolderBrowserDialog();
-             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             rootpath = "Der Festgelegte Pfad ist: " + '"' + dialog.SelectedPath + '"';
             Lbox.Items.Add(rootpath);
             allhash = ProcessDir(dialog.SelectedPath);
@@ -63,6 +63,17 @@ namespace Hashgen
                 Lbox.Items.Add(hash);
             }
 
+        }
+
+        private void exportfile(object sender, RoutedEventArgs e)
+        {
+            using var dialog = new System.Windows.Forms.FolderBrowserDialog();
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+            StreamWriter write = File.CreateText(dialog.SelectedPath + DateTime.Now.ToString());
+            foreach(String hash in allhash)
+            {
+                write.WriteLine(hash);
+            }
         }
     }
 }
