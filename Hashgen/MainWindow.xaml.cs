@@ -21,26 +21,28 @@ namespace Hashgen
     public partial class MainWindow : Window
     {
         public string rootpath;
-        public List<String> allhash;
+        List<String> hashlist = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public static List<String> ProcessDir(string targetdir)
+        public static void ProcessDir(string targetdir, List<String> hl)
         {
             // Process the list of files found in the directory.
             string[] fileEntries = Directory.GetFiles(targetdir);
-            List<String> hashlist = new List<string>();
             foreach (string fileName in fileEntries)
-                hashlist.Add(ProcessFile(fileName));
+            {
+                hl.Add(ProcessFile(fileName));
+            }
 
             // Recurse into subdirectories of this directory.
             string[] subdirectoryEntries = Directory.GetDirectories(targetdir);
             foreach (string subdirectory in subdirectoryEntries)
-                ProcessDir(subdirectory);
+            {
+                ProcessDir(subdirectory, hl);
+            }
 
-            return hashlist;
         }
 
         public static string ProcessFile(string path)
@@ -53,12 +55,13 @@ namespace Hashgen
 
         private void Openfileselect(object sender, RoutedEventArgs e)
         {
+            hashlist.Clear();
             using var dialog = new System.Windows.Forms.FolderBrowserDialog();
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             rootpath = "Der Festgelegte Pfad ist: " + '"' + dialog.SelectedPath + '"';
             Lbox.Items.Add(rootpath);
-            allhash = ProcessDir(dialog.SelectedPath);
-            foreach(String hash in allhash)
+            ProcessDir(dialog.SelectedPath, hashlist);
+            foreach(String hash in hashlist)
             {
                 Lbox.Items.Add(hash);
             }
@@ -70,7 +73,7 @@ namespace Hashgen
             Lbox.Items.Clear();
             Lbox.Items.Add("Exportpfad ist: C:\\Users\\" + Environment.UserName + "\\Downloads\\" + "Hashgen_export.txt");
             StreamWriter write = File.CreateText("C:\\Users\\"+ Environment.UserName +"\\Downloads\\" + "Hashgen_export.txt");
-            foreach(String hash in allhash)
+            foreach(String hash in hashlist)
             {
                 write.WriteLine(hash);
             }
