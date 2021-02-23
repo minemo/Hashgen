@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="HashGen" Height="450" Width="375">
     <Grid>
-        <Button x:Name="button1" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="openfileselect"/>
+        <Button x:Name="button1" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="Openfileselect"/>
         <ListView x:Name="Lbox" Margin="115,0,0,0">
             <ListView.View>
                 <GridView>
@@ -15,7 +15,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button1_Copy" Content="Export" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="exportfile"/>
+        <Button x:Name="button1_Copy" Content="Export" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="50" Width="100" Click="Exportfile"/>
 
     </Grid>
 </Window>
