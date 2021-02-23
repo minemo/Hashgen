@@ -51,7 +51,7 @@ namespace Hashgen
             return BitConverter.ToString(hashcode).Replace("-", "");
         }
 
-        private void openfileselect(object sender, RoutedEventArgs e)
+        private void Openfileselect(object sender, RoutedEventArgs e)
         {
             using var dialog = new System.Windows.Forms.FolderBrowserDialog();
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
@@ -65,7 +65,7 @@ namespace Hashgen
 
         }
 
-        private void exportfile(object sender, RoutedEventArgs e)
+        private void Exportfile(object sender, RoutedEventArgs e)
         {
             Lbox.Items.Clear();
             Lbox.Items.Add("Exportpfad ist: C:\\Users\\" + Environment.UserName + "\\Downloads\\" + "Hashgen_export.txt");
