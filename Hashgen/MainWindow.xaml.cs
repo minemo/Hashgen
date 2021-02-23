@@ -67,8 +67,6 @@ namespace Hashgen
 
         private void exportfile(object sender, RoutedEventArgs e)
         {
-            using var dialog = new System.Windows.Forms.FolderBrowserDialog();
-            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             StreamWriter write = File.CreateText("C:\\Users\\"+ Environment.UserName +"\\Downloads\\" + "Hashgen_export.txt");
             foreach(String hash in allhash)
             {
